@@ -1,0 +1,14 @@
+[Unit]
+Description=My Python Daemon
+After=network.target
+
+[Service]
+ExecStart=SystemD.py
+Restart=always
+StandardOutput=file:/home/egor/daemon/daemon.log
+StandardError=file:/home/egor/daemon/daemon.log
+SyslogIdentifier=my_daemon
+TimeoutSec=500
+
+[Install]
+WantedBy=multi-user.target
